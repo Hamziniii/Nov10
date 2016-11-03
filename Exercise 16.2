@@ -1,0 +1,19 @@
+class Time(object):
+    """Represents the time of day.
+    attributes: hour, minute, second
+    """
+    hour = None
+    minute = None
+    second = None
+
+def is_after(t1, t2):
+    if t1.hour <= t2.hour:
+        if t1.minute <= t2.minute:
+            if t1.second <= t2.second:
+                return False
+            else:
+                return True
+        else:
+            return True
+    else:
+        return True
