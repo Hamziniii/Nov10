@@ -1,0 +1,2 @@
+def print_time(hour, minute, second):
+    print '%.2d:%.2d:%.2d' % (hour, minute, second)
