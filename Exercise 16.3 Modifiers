@@ -1,0 +1,20 @@
+class Time(object):
+    """Represents the time of day.
+    attributes: hour, minute, second
+    """
+    hour = None
+    minute = None
+    second = None
+
+
+def increment(time, seconds):
+    int1 = 60  # I made a variable to hold the 60 just because
+    time.second += seconds
+    if time.second >= int1:
+        minute = time.second / int1
+        time.minute += minute
+        time.second -= minute * int1
+    if time.minute >= int1:
+        hour = time.minute / int1
+        time.hour += hour
+        time.minute -= hour * int1
