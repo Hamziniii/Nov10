@@ -18,3 +18,4 @@ def increment(time, seconds):
         hour = time.minute / int1
         time.hour += hour
         time.minute -= hour * int1
+    return time.second, time.minute, time.hour
