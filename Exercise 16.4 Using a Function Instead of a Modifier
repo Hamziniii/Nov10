@@ -1,0 +1,25 @@
+class Time(object):
+    """Represents the time of day.
+    attributes: hour, minute, second
+    """
+    hour = None
+    minute = None
+    second = None
+
+
+def increment(time, seconds):
+    time_increment = Time()
+    time_increment.hour = time.hour
+    time_increment.second = time.second
+    time_increment.minute = time.minute
+    
+    time_increment.second += seconds
+    if time_increment.second >= 60:
+        minute = time_increment.second / 60
+        time_increment.minute += minute
+        time_increment.second -= minute * 60
+    if time_increment.minute >= 60:
+        hour = time_increment.minute / 60
+        time_increment.hour += hour
+        time_increment.minute -= hour * 60
+    return time_increment.hour, time_increment.minute, time_increment.second
