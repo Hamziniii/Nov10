@@ -1,0 +1,53 @@
+# Exercise Part 1
+import datetime
+
+d = datetime.date
+t = d.today()
+strDateToday = str(d.today())
+dateToday = d.today()
+year = strDateToday[0:4]
+month = strDateToday[5:7]
+day = strDateToday[8:]
+
+numDay = d.weekday(t)
+
+numberToMonth = {"1": " January", "2": " February", "3": " March", "4": " April", "5": " May", "6": " June", "7":
+                 " July", "8": " August", "9": " September", "10": " October", "11": " November", "12": "December", }
+numToDay = {"0": "Monday", "1": "Tuesday", "2": "Wednesday", "3": "Thursday", "4": "Friday", "5": "Saturday",
+            "6": "Sunday"}
+
+print "Today's Date is: " + numToDay[str(numDay)] + numberToMonth[month] + " " + day + " " + year + "\n\n"
+# ----------------------------------------------------------------------------------------------------------------------
+# Exercise Part 2
+
+birthYear = raw_input("What is the year you were born? (yyyy) ")
+birthMonth = raw_input("What month were you born? (mm) ")
+birthDay = raw_input("What is the day you were born? (dd) ")
+
+birthYear = int(birthYear)
+birthMonth = int(birthMonth)
+birthDay = int(birthDay)
+
+
+def birthday_date(byear, bmonth, bday):
+    y = datetime.date(int(byear), int(month), int(day))
+    age = d.today() - y
+    age = str(age)
+    age = age[:5]
+    age = int(age)
+    age /= 365
+
+    date = datetime.date(int(year), bmonth, bday)
+    if date < t:
+        date = date.replace(year=t.year + 1)
+    timeleft = abs(t - date)
+    print "\nYou are " + str(age) + " years old."
+    timeleft = str(timeleft)
+    timeleft = timeleft[:3]
+    if date == d.today():
+        print "Today is your Birthday, Happy Birthday To You!!!"
+    else:
+        print "And you have " + str(timeleft) + " days left till your birthday"
+
+
+birthday_date(birthYear, birthMonth, birthDay)
