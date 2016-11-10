@@ -8,7 +8,7 @@ class Time(object):
 
 
 def increment(time, seconds):
-    int1 = 60  # I made a variable to hold the 60 just because
+    oneminute = 60
     time.second += seconds
     if time.second >= int1:
         minute = time.second / int1
